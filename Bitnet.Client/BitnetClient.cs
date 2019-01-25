@@ -261,5 +261,18 @@ namespace Bitnet.Client
         return InvokeMethod("getblockchainparams")["result"] as JObject;
     }
 
+    public JArray ListUnspent(string a_address)
+    {
+        JArray props = new JArray();
+        props.Add(a_address);
+
+        return InvokeMethod("listunspent", 1, 9999999, props)["result"] as JArray;
+    }
+
+    public JArray ListStreams(string streamName)
+    {
+        return InvokeMethod("liststreams", streamName)["result"] as JArray;
+    }
+
     }
 }

@@ -19,18 +19,24 @@ namespace Bitnet
       BitnetClient bc = new BitnetClient("http://13.125.145.98:4260");
       bc.Credentials = new NetworkCredential("hdacrpc", "1234");
       var p = bc.GetDifficulty();
-      Console.WriteLine(p);
+      //Console.WriteLine(p);
 
       var p1 = bc.GetBlockchainParams();
-      Console.WriteLine(p1);
+      //Console.WriteLine(p1);
 
-      Console.WriteLine(p1["address-pubkeyhash-version"]);
-      Console.WriteLine(p1["address-scripthash-version"]);
-      Console.WriteLine(p1["address-checksum-value"]);
-      Console.WriteLine(p1["private-key-version"]);
+      //Console.WriteLine(p1["address-pubkeyhash-version"]);
+      //Console.WriteLine(p1["address-scripthash-version"]);
+      //Console.WriteLine(p1["address-checksum-value"]);
+      //Console.WriteLine(p1["private-key-version"]);
 
-      Console.WriteLine("엔터키를 누르십시오");
-      int code = Console.Read();
+      var p2 = bc.ListUnspent("1WCRNaPb3jAjb4GE9t34uLiLtPseA8JKEvdtg5"); 
+      Console.WriteLine("listunspent result : {0}", p2);
+
+      var p3 = bc.ListStreams("stream9");
+      Console.WriteLine("liststreams result : {0}", p3);
+
+      //Console.WriteLine("엔터키를 누르십시오");
+      //int code = Console.Read();
     }
   }
 }
