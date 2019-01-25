@@ -255,5 +255,11 @@ namespace Bitnet.Client
     {
       return InvokeMethod("validateaddress", a_address)["result"] as JObject;
     }
-  }
+
+    public JObject GetBlockchainParams()
+    {
+        return InvokeMethod("getblockchainparams")["result"] as JObject;
+    }
+
+    }
 }

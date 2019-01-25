@@ -1,0 +1,7 @@
+.vs/
+Bitnet.Client/bin/
+Bitnet.Client/obj/
+Bitnet/bin/
+Bitnet/obj/
+Newtonsoft.Json/bin/
+Newtonsoft.Json/obj/
