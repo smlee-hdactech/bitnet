@@ -261,6 +261,16 @@ namespace Bitnet.Client
         return InvokeMethod("getblockchainparams")["result"] as JObject;
     }
 
+    public string SignMessage(string a_address, string m_message)
+    {
+            return InvokeMethod("signmessage", a_address, m_message)["result"].ToString();
+    }
+
+    public bool VerifyMessage(string p_privatekey, string s_signmessage, string m_message)
+    {
+            return (bool)InvokeMethod("verifymessage", p_privatekey, s_signmessage, m_message)["result"];
+    }
+
     public JArray ListUnspent(string a_address)
     {
         JArray props = new JArray();

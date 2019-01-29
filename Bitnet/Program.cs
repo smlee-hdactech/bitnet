@@ -35,6 +35,15 @@ namespace Bitnet
       var p3 = bc.ListStreams("stream9");
       Console.WriteLine("liststreams result : {0}", p3);
 
+      var p4 = bc.SignMessage("V6UF7ajLq1kRHXjHMftMBaZ6VgsB2XoQdUnFesRK8BrxDdQsXAxUckNj",
+                          "Hdac Technology, Solution Dev Team, Test Text.");
+      Console.WriteLine("signmessage result : {0}", p4);
+
+      var p5 = bc.VerifyMessage("18kt4KV2hVzKQKMCmwSd6KS9a72bbSxe7YN6NR",
+                          "IDL0eekwkEURPeoNJOMdry1N8nmS2YrcS6no/Mnjs1pmB5G756arYY9rN8h2++K5IPxIEObk610/nTvEVtk4m1s=",
+                          "Hdac Technology, Solution Dev Team, Test Text.");
+      Console.WriteLine("verifymessage result : {0}", p5);
+
       //Console.WriteLine("엔터키를 누르십시오");
       //int code = Console.Read();
     }
