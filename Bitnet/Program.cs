@@ -44,6 +44,15 @@ namespace Bitnet
                           "Hdac Technology, Solution Dev Team, Test Text.");
       Console.WriteLine("verifymessage result : {0}", p5);
 
+      var p6 = bc.LockUnspents(false, "f7c5e50d7673fbfc56de3ea3ac09e35868c6b992a2ad7bc4421aad60e6fbf66f", 0);
+      Console.WriteLine("lockunspent : {0}", p6);
+
+      var p7 = bc.ListLockUnspent();
+      Console.WriteLine("listlockunspent result : {0}", p7);
+
+      var p8 = bc.ListAssets("ass1");
+      Console.WriteLine("listassets result : {0}", p8);
+
       //Console.WriteLine("엔터키를 누르십시오");
       //int code = Console.Read();
     }

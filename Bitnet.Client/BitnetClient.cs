@@ -284,5 +284,26 @@ namespace Bitnet.Client
         return InvokeMethod("liststreams", streamName)["result"] as JArray;
     }
 
+    public bool LockUnspents(bool u_unlock, string t_txid, int v_vout)
+    {
+            JArray arr = new JArray();
+            JObject obj = new JObject();
+            obj.Add("txid", t_txid);
+            obj.Add("vout", v_vout);
+            arr.Add(obj);
+            
+            return (bool)InvokeMethod("lockunspent", u_unlock, arr)["result"];
+    }
+   
+    public JArray ListLockUnspent()
+    {
+            return InvokeMethod("listlockunspent")["result"] as JArray;
+    }
+
+    public JArray ListAssets(string assetName)
+    {
+            return InvokeMethod("listassets", assetName)["result"] as JArray;
+    }
+
     }
 }
